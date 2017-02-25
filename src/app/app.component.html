@@ -29,7 +29,9 @@
                          (keypress)="_keyPress($event)"
                          (input)="hv.value=$event.target.value.toUpperCase()"
                          formControlName="hexValue">
-                  <i mdSuffix class="material-icons">keyboard_return</i>
+                  <i mdSuffix
+                     *ngIf="hexValue.valid && hv.value.length > 0"
+                     class="material-icons">keyboard_return</i>
 
                 </md-input-container>
                 <md-hint align="start"
