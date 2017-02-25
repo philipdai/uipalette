@@ -25,9 +25,12 @@
                          class="hex-input"
                          name="hexValue"
                          maxlength="7"
+                         #hv
                          (keypress)="_keyPress($event)"
+                         (input)="hv.value=$event.target.value.toUpperCase()"
                          formControlName="hexValue">
                   <i mdSuffix class="material-icons">keyboard_return</i>
+
                 </md-input-container>
                 <md-hint align="start"
                          *ngIf="!hexValue.valid">
@@ -36,7 +39,6 @@
                   </span></md-hint>
               </div>
             </div>
-
           </div>
         </div>
       </div>
@@ -50,6 +52,5 @@
         </div>
       </div>
     </div>
-
   </div>
 </div>
