@@ -19,7 +19,7 @@ export class AppComponent implements OnInit{
   buildForm(): void {
     this.hexForm = this.fb.group({
       'hexValue': ['', [
-        Validators.pattern(/^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$/)
+        Validators.pattern(/(^#([A-Fa-f0-9]{6}|[A-Fa-f0-9]{3})$)|(^[A-Fa-f0-9]{6}$)|(^[A-Fa-f0-9]{3}$)/)
       ]]
     });
 
