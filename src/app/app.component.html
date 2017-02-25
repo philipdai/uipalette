@@ -1,3 +1,37 @@
-<h1>
-  {{title}}
-</h1>
+<div>
+  <div class="jumbotron jumbotron-fluid">
+    <form novalidate [formGroup]="hexForm">
+      <div class="container">
+        <div class="row">
+          <div class="col col-md-4 col-lg-4">
+            <div class="row">
+              <div class="col">
+                UIPALETTE
+              </div>
+            </div>
+            <div class="row">
+              <div class="col">
+                Generate palatte by one clicking
+              </div>
+            </div>
+          </div>
+          <div class="col col-md-1 col-lg-1">
+          </div>
+          <div class="col col-md-7 col-lg-7">
+            <div class="row">
+              <div class="col">
+                <md-input-container>
+                  <input mdInput placeholder="#HEX" class="hex-input" name="hexValue"
+                         formControlName="hexValue">
+                </md-input-container>
+                <md-hint align="start"
+                         *ngIf="!hexValue.valid">Please input valid hex value.</md-hint>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
