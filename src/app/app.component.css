@@ -5,3 +5,7 @@
 .jumbotron {
     padding: 2em;
 }
+
+.error-msg {
+    color: palevioletred;
+}

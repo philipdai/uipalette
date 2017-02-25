@@ -26,4 +26,15 @@ export class AppComponent implements OnInit{
     this.hexValue = this.hexForm.controls['hexValue'];
   }
 
+  _keyPress(event: any) {
+    const pattern = /#|[A-Fa-f0-9]/;
+    let inputChar = String.fromCharCode(event.charCode);
+
+    if (!pattern.test(inputChar)) {
+      // invalid character, prevent input
+      event.preventDefault();
+    }
+  }
+
+
 }

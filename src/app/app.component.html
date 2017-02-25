@@ -21,11 +21,17 @@
             <div class="row">
               <div class="col">
                 <md-input-container>
-                  <input mdInput placeholder="#HEX" class="hex-input" name="hexValue"
+                  <input mdInput placeholder="#HEX"
+                         class="hex-input"
+                         name="hexValue"
+                         (keypress)="_keyPress($event)"
                          formControlName="hexValue">
                 </md-input-container>
                 <md-hint align="start"
-                         *ngIf="!hexValue.valid">Please input valid hex value.</md-hint>
+                         *ngIf="!hexValue.valid">
+                  <span class="error-msg">
+                    Please input valid hex value.
+                  </span></md-hint>
               </div>
             </div>
 
