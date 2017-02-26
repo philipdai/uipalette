@@ -8,6 +8,15 @@
 
 .hex-input {
     font-size: 32px;
+    border-bottom: dotted rgba(0,0,0,0.12) 1px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    background: transparent;
+}
+
+.hex-input:focus {
+    outline-width: 0;
 }
 
 .jumbotron {
@@ -94,3 +103,4 @@ form {
     margin: 0;
     padding: 0;
 }
+

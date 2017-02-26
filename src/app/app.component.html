@@ -6,7 +6,9 @@
           <div class="col col-md-4 col-lg-4">
             <div class="row">
               <div class="col">
-                <span class="uiplatte-icon" [style.color]="'#FF3F80'">UI</span><span class="uiplatte-icon" [style.color]="'rgba(0,0,0,.87)'">PALE</span><span class="uiplatte-icon" [style.color]="'#3E50B4'">TTE</span>
+                <span class="uiplatte-icon" [style.color]="'#FF3F80'">UI</span><span class="uiplatte-icon"
+                                                                                     [style.color]="'rgba(0,0,0,.87)'">PALE</span><span
+                  class="uiplatte-icon" [style.color]="'#3E50B4'">TTE</span>
               </div>
             </div>
             <div class="row">
@@ -20,22 +22,19 @@
           <div class="col col-md-7 col-lg-7">
             <div class="row">
               <div class="col">
-                <md-input-container>
-                  <input mdInput placeholder="HEX"
-                         class="hex-input"
-                         name="hexValue"
-                         maxlength="7"
-                         #hv
-                         (click)="hv.value = ''"
-                         (keypress)="_keyPress($event)"
-                         (input)="hv.value=dealHashStr($event.target.value.toUpperCase())"
-                         (blur)="calBaseHsl(hv.value)"
-                         formControlName="hexValue">
-                  <i mdSuffix
-                     *ngIf="hexValue.valid && hv.value.length > 0"
-                     class="material-icons">keyboard_return</i>
+                <input placeholder="HEX"
+                       class="hex-input"
+                       name="hexValue"
+                       maxlength="7"
+                       #hv
+                       (click)="hv.value = ''"
+                       (keypress)="_keyPress($event)"
+                       (input)="hv.value=dealHashStr($event.target.value.toUpperCase())"
+                       (blur)="calBaseHsl(hv.value)"
+                       formControlName="hexValue">
+                <i  *ngIf="hexValue.valid && hv.value.length > 0"
+                    class="material-icons">keyboard_return</i>
 
-                </md-input-container>
                 <md-hint align="start"
                          *ngIf="!hexValue.valid">
                   <span class="error-msg">
@@ -97,7 +96,8 @@
                    [style.paddingLeft.px]="0"
                    [style.paddingRight.px]="6"
                    [style.paddingUp.px]="2"
-                   [style.fontSize.px]="13">Github</div>
+                   [style.fontSize.px]="13">Github
+              </div>
             </div>
           </div>
         </div>
