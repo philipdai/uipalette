@@ -11,13 +11,13 @@
     color: palevioletred;
 }
 
-.footer{
-    position:fixed;
-    height:50px;
-    bottom:0px;
-    left:0px;
-    right:0px;
-    margin-bottom:0px;
+.footer {
+    position: fixed;
+    height: 50px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
     padding: 1em 0;
 }
 
@@ -31,4 +31,18 @@
     width: 56px;
     height: 168px;
     font-size: 8px;
+}
+
+.uiplatte-icon {
+    width: 48.5px;
+    height: 12px;
+    font-family: DancingScript;
+    font-size: 10px;
+    font-weight: normal;
+    font-style: normal;
+    font-stretch: normal;
+    line-height: normal;
+    letter-spacing: normal;
+    text-align: left;
+    color: rgba(0, 0, 0, 0.87);
 }
