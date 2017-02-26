@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, HostListener } from '@angular/core';
 import {FormControl, FormBuilder, FormGroup, Validators, AbstractControl} from "@angular/forms";
 import { hexToHsl } from '../common/color-conversion';
 
@@ -14,6 +14,7 @@ export class AppComponent implements OnInit{
   hslArr1: Array<any>;
   hslArr2: Array<any>;
   hslArr3: Array<any>;
+  bodyWidth: number;
 
   constructor(private fb: FormBuilder) {
     this.hexToHsl = hexToHsl;
@@ -24,6 +25,7 @@ export class AppComponent implements OnInit{
     this.hslArr1 = [];
     this.hslArr2 = [];
     this.hslArr3 = [];
+    this.bodyWidth = window.innerWidth || document.body.clientWidth;
   }
 
   buildForm(): void {
@@ -56,6 +58,11 @@ export class AppComponent implements OnInit{
       }
     }
     return returnStr;
+  }
+
+  @HostListener('window:resize', ['$event'])
+  onResize(event) {
+    this.bodyWidth = event.target.innerWidth;
   }
 
 }

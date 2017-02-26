@@ -20,10 +20,15 @@
     margin-bottom:0px;
 }
 
+.colorRow {
+    display: -webkit-flex;
+    display: flex;
+    /*border: solid green 1px;*/
+}
+
 .colorDiv {
     width: 56px;
     height: 168px;
     font-size: 8px;
-    display: flex;
     border: solid gray 1px;
 }

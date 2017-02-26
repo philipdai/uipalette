@@ -46,10 +46,22 @@
       </div>
     </form>
   </div>
-  <div class="colorDiv container" [style.background-color]="dealHashStr(hv.value)">
+  <div class="row">
+    <div class="col colorRow">
+      <div class="colorDiv"
+           [style.width.px]="bodyWidth * 0.11"
+           [style.height.px]="bodyWidth * 0.16"
+           [style.background-color]="dealHashStr(hv.value)">
+        {{dealHashStr(hv.value)}}
+      </div>
+    </div>
+  </div>
+  <div class="colorRow">
     <!--{{ hexToHsl(dealHashStr(hv.value))}}-->
-    <div class="row">
-      <div class="col">{{dealHashStr(hv.value)}}</div>
+    <div class="row container">
+      <div class="col colorDiv" [style.background-color]="dealHashStr(hv.value)">
+        {{bodyWidth}}
+      </div>
     </div>
   </div>
   <div class="footer">
