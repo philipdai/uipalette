@@ -1,4 +1,4 @@
-function rgbToHsl (r, g, b) {
+export function rgbToHsl (r, g, b) {
   var d, h, l, max, min, s;
   r /= 255;
   g /= 255;
@@ -31,7 +31,7 @@ function rgbToHsl (r, g, b) {
   return [h, s, l];
 };
 
-function hexToRgb (hex) {
+export function hexToRgb (hex) {
   if (hex.charAt && hex.charAt(0) === '#') {
     hex = removeHash(hex)
   }

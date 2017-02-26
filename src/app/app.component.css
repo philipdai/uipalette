@@ -23,7 +23,7 @@
 .colorRow {
     display: -webkit-flex;
     display: flex;
-    /*border: solid green 1px;*/
+    align-items: stretch;
 }
 
 .colorDiv {

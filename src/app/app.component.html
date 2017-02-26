@@ -28,6 +28,7 @@
                          #hv
                          (keypress)="_keyPress($event)"
                          (input)="hv.value=dealHashStr($event.target.value.toUpperCase())"
+                         (blur)="calBaseHsl(hv.value)"
                          formControlName="hexValue">
                   <i mdSuffix
                      *ngIf="hexValue.valid && hv.value.length > 0"
@@ -49,18 +50,11 @@
   <div class="row">
     <div class="col colorRow">
       <div class="colorDiv"
-           [style.width.px]="bodyWidth * 0.11"
+           *ngFor="let hsl of hslArr1"
+           [style.width.px]="bodyWidth * 0.115"
            [style.height.px]="bodyWidth * 0.16"
-           [style.background-color]="dealHashStr(hv.value)">
-        {{dealHashStr(hv.value)}}
-      </div>
-    </div>
-  </div>
-  <div class="colorRow">
-    <!--{{ hexToHsl(dealHashStr(hv.value))}}-->
-    <div class="row container">
-      <div class="col colorDiv" [style.background-color]="dealHashStr(hv.value)">
-        {{bodyWidth}}
+           [style.background-color]="hsl">
+        HSL: {{ hsl }}
       </div>
     </div>
   </div>
