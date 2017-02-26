@@ -79,6 +79,7 @@ export class AppComponent implements OnInit{
   }
 
   calBaseHsl(hexVal): any {
+    if (hexVal.length === 0) return ;
     this.clearHexVal();
     this.tmpHsl = hexToHsl(this.dealHashStr(hexVal));
     this.baseHsl = `hsl(${this.tmpHsl[0]}, ${this.tmpHsl[1]}%, ${this.tmpHsl[2]}%)`;
