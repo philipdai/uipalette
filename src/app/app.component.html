@@ -27,7 +27,7 @@
                          maxlength="7"
                          #hv
                          (keypress)="_keyPress($event)"
-                         (input)="hv.value=$event.target.value.toUpperCase()"
+                         (input)="hv.value=dealHashStr($event.target.value.toUpperCase())"
                          formControlName="hexValue">
                   <i mdSuffix
                      *ngIf="hexValue.valid && hv.value.length > 0"
@@ -45,6 +45,12 @@
         </div>
       </div>
     </form>
+  </div>
+  <div class="colorDiv container" [style.background-color]="dealHashStr(hv.value)">
+    <!--{{ hexToHsl(dealHashStr(hv.value))}}-->
+    <div class="row">
+      <div class="col">{{dealHashStr(hv.value)}}</div>
+    </div>
   </div>
   <div class="footer">
     <div class="container">

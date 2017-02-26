@@ -4,6 +4,7 @@
 
 .jumbotron {
     padding: 2em;
+    margin-bottom: 0;
 }
 
 .error-msg {
@@ -17,4 +18,12 @@
     left:0px;
     right:0px;
     margin-bottom:0px;
+}
+
+.colorDiv {
+    width: 56px;
+    height: 168px;
+    font-size: 8px;
+    display: flex;
+    border: solid gray 1px;
 }

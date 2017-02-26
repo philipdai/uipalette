@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {FormControl, FormBuilder, FormGroup, Validators, AbstractControl} from "@angular/forms";
+import { hexToHsl } from '../common/color-conversion';
 
 @Component({
   selector: 'app-root',
@@ -9,11 +10,20 @@ import {FormControl, FormBuilder, FormGroup, Validators, AbstractControl} from "
 export class AppComponent implements OnInit{
   hexForm: FormGroup;
   hexValue: AbstractControl;
+  hexToHsl: Function;
+  hslArr1: Array<any>;
+  hslArr2: Array<any>;
+  hslArr3: Array<any>;
 
-  constructor(private fb: FormBuilder) {}
+  constructor(private fb: FormBuilder) {
+    this.hexToHsl = hexToHsl;
+  }
 
   ngOnInit(): void {
     this.buildForm();
+    this.hslArr1 = [];
+    this.hslArr2 = [];
+    this.hslArr3 = [];
   }
 
   buildForm(): void {
@@ -36,5 +46,16 @@ export class AppComponent implements OnInit{
     }
   }
 
+  dealHashStr(str: string): string {
+    let returnStr = '';
+    if (str.length > 0) {
+      if (str.indexOf('#') === -1) {
+        returnStr = '#' + str;
+      } else {
+        returnStr = str;
+      }
+    }
+    return returnStr;
+  }
 
 }
