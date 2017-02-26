@@ -5,10 +5,12 @@ import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
+import { SetFocusDirective } from '../directives/set-focus';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    SetFocusDirective
   ],
   imports: [
     BrowserModule,

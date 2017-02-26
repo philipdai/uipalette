@@ -27,6 +27,7 @@
                        name="hexValue"
                        maxlength="7"
                        #hv
+                       setFocus
                        (click)="hv.value = ''"
                        (keypress)="_keyPress($event)"
                        (input)="hv.value=dealHashStr($event.target.value.toUpperCase())"
