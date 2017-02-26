@@ -83,8 +83,7 @@ export class AppComponent implements OnInit{
     this.tmpHsl = hexToHsl(this.dealHashStr(hexVal));
     this.baseHsl = `hsl(${this.tmpHsl[0]}, ${this.tmpHsl[1]}%, ${this.tmpHsl[2]}%)`;
     this.calHslArr2();
-    this.calHslArr1();
-    this.calHslArr3();
+
   }
 
   calHslArr2(): void {
@@ -98,6 +97,9 @@ export class AppComponent implements OnInit{
       this.baseHslArr2.push([tmpHue, baseSaturation, baseLightness]);
       this.hslArr2.push(`hsl(${tmpHue}, ${baseSaturation}%, ${baseLightness}%)`);
     }
+
+    this.calHslArr1();
+    this.calHslArr3();
   }
 
   calHslArr1(): void {
@@ -123,6 +125,7 @@ export class AppComponent implements OnInit{
     this.hslArr2 = [];
     this.hslArr1 = [];
     this.hslArr3 = [];
+    this.baseHslArr2 = [];
   }
 
   calHslArr3(): void {
@@ -130,6 +133,7 @@ export class AppComponent implements OnInit{
     let tmpSaturation = 0;
     let tmpLightness = 0;
 
+    console.log('this.baseHslArr2: ', this.baseHslArr2);
     for (let i = 0; i < 9; i++) {
       tmpHue = Math.ceil((this.baseHslArr2[i][0] - 3.6) % 360);
       if ((this.baseHslArr2[i][1] + 1) <= 100) {
