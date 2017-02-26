@@ -105,13 +105,13 @@ export class AppComponent implements OnInit{
     let tmpLightness = 0;
 
     for (let i = 0; i < 9; i++) {
-      tmpHue = (this.baseHslArr2[i][0] + 3 * i) % 360;
-      if ((this.baseHslArr2[i][1] - 29 * i) >= 0) {
-        tmpSaturation = (this.baseHslArr2[i][1] -29 * i) % 100;
+      tmpHue = Math.ceil((this.baseHslArr2[i][0] + 3.6) % 360);
+      if ((this.baseHslArr2[i][1] - 29) >= 0) {
+        tmpSaturation = (this.baseHslArr2[i][1] -29) % 100;
       }
 
-      if ((this.baseHslArr2[i][2] + 3 * i) <= 100) {
-        tmpLightness = (this.baseHslArr2[i][2] + 3 * i) % 100;
+      if ((this.baseHslArr2[i][2] + 3) <= 100) {
+        tmpLightness = (this.baseHslArr2[i][2] + 3) % 100;
       }
 
       this.hslArr1.push(`hsl(${tmpHue}, ${tmpSaturation}%, ${tmpLightness}%)`);
@@ -124,13 +124,13 @@ export class AppComponent implements OnInit{
     let tmpLightness = 0;
 
     for (let i = 0; i < 9; i++) {
-      tmpHue = (this.baseHslArr2[i][0] - 3 * i) % 360;
-      if ((this.baseHslArr2[i][1] + i) >= 0) {
-        tmpSaturation = (this.baseHslArr2[i][1] + i) % 100;
+      tmpHue = Math.ceil((this.baseHslArr2[i][0] - 3.6) % 360);
+      if ((this.baseHslArr2[i][1] + 1) <= 100) {
+        tmpSaturation = (this.baseHslArr2[i][1] + 1) % 100;
       }
 
-      if ((this.baseHslArr2[i][2] - 13 * i) >= 0) {
-        tmpLightness = (this.baseHslArr2[i][2] - 13 * i) % 100;
+      if ((this.baseHslArr2[i][2] -13 ) >= 0) {
+        tmpLightness = (this.baseHslArr2[i][2] - 13) % 100;
       }
 
       this.hslArr3.push(`hsl(${tmpHue}, ${tmpSaturation}%, ${tmpLightness}%)`);
