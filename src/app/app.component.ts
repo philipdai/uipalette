@@ -13,6 +13,7 @@ export class AppComponent implements OnInit{
   hexToHsl: Function;
   baseHsl: any;
   tmpHsl: any;
+  baseHslArr2: Array<any>;
   hslArr1: Array<any>;
   rgbArr1: Array<any>;
   hslArr2: Array<any>;
@@ -30,6 +31,7 @@ export class AppComponent implements OnInit{
     this.buildForm();
     this.tmpHsl = [];
     this.baseHsl = '';
+    this.baseHslArr2 = [];
     this.hslArr1 = [];
     this.hslArr2 = [];
     this.hslArr3 = [];
@@ -79,30 +81,59 @@ export class AppComponent implements OnInit{
   calBaseHsl(hexVal): any {
     this.tmpHsl = hexToHsl(this.dealHashStr(hexVal));
     this.baseHsl = `hsl(${this.tmpHsl[0]}, ${this.tmpHsl[1]}%, ${this.tmpHsl[2]}%)`;
-
+    this.calHslArr2();
     this.calHslArr1();
+    this.calHslArr3();
   }
 
-  calHslArr1(): void {
+  calHslArr2(): void {
     let baseHue = parseInt(this.tmpHsl[0], 10);
     let baseSaturation = parseInt(this.tmpHsl[1], 10);
     let baseLightness = parseInt(this.tmpHsl[2], 10);
+    let tmpHue = 0;
+
+    for (let i = 0; i < 9; i++) {
+      tmpHue = (baseHue + 40 * i) % 360;
+      this.baseHslArr2.push([tmpHue, baseSaturation, baseLightness]);
+      this.hslArr2.push(`hsl(${tmpHue}, ${baseSaturation}%, ${baseLightness}%)`);
+    }
+  }
+
+  calHslArr1(): void {
     let tmpHue = 0;
     let tmpSaturation = 0;
     let tmpLightness = 0;
 
     for (let i = 0; i < 9; i++) {
-      tmpHue = (baseHue + 36 * i) % 360;
-      if ((baseSaturation - 29 * i) >= 0) {
-        tmpSaturation = (baseSaturation -29 * i) % 100;
+      tmpHue = (this.baseHslArr2[i][0] + 3 * i) % 360;
+      if ((this.baseHslArr2[i][1] - 29 * i) >= 0) {
+        tmpSaturation = (this.baseHslArr2[i][1] -29 * i) % 100;
       }
 
-      if ((baseLightness + 3 * i) <= 100) {
-        tmpLightness = (baseLightness + 3 * i) % 100;
+      if ((this.baseHslArr2[i][2] + 3 * i) <= 100) {
+        tmpLightness = (this.baseHslArr2[i][2] + 3 * i) % 100;
       }
 
       this.hslArr1.push(`hsl(${tmpHue}, ${tmpSaturation}%, ${tmpLightness}%)`);
     }
+  }
 
+  calHslArr3(): void {
+    let tmpHue = 0;
+    let tmpSaturation = 0;
+    let tmpLightness = 0;
+
+    for (let i = 0; i < 9; i++) {
+      tmpHue = (this.baseHslArr2[i][0] - 3 * i) % 360;
+      if ((this.baseHslArr2[i][1] + i) >= 0) {
+        tmpSaturation = (this.baseHslArr2[i][1] + i) % 100;
+      }
+
+      if ((this.baseHslArr2[i][2] - 13 * i) >= 0) {
+        tmpLightness = (this.baseHslArr2[i][2] - 13 * i) % 100;
+      }
+
+      this.hslArr3.push(`hsl(${tmpHue}, ${tmpSaturation}%, ${tmpLightness}%)`);
+    }
   }
 }

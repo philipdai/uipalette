@@ -47,12 +47,37 @@
       </div>
     </form>
   </div>
+
   <div class="row">
     <div class="col colorRow">
       <div class="colorDiv"
            *ngFor="let hsl of hslArr1"
            [style.width.px]="bodyWidth * 0.115"
-           [style.height.px]="bodyWidth * 0.16"
+           [style.height.px]="bodyWidth * 0.14"
+           [style.background-color]="hsl">
+        HSL: {{ hsl }}
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col colorRow">
+      <div class="colorDiv"
+           *ngFor="let hsl of hslArr2"
+           [style.width.px]="bodyWidth * 0.115"
+           [style.height.px]="bodyWidth * 0.14"
+           [style.background-color]="hsl">
+        HSL: {{ hsl }}
+      </div>
+    </div>
+  </div>
+
+  <div class="row">
+    <div class="col colorRow">
+      <div class="colorDiv"
+           *ngFor="let hsl of hslArr3"
+           [style.width.px]="bodyWidth * 0.115"
+           [style.height.px]="bodyWidth * 0.14"
            [style.background-color]="hsl">
         HSL: {{ hsl }}
       </div>
