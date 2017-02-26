@@ -7,11 +7,11 @@
 }
 
 .hex-input {
-    font-size: 120%;
+    font-size: 32px;
 }
 
 .jumbotron {
-    padding: 1em;
+    padding: 0;
     margin-bottom: 0;
 }
 
@@ -25,7 +25,7 @@
     bottom: 0px;
     left: 0px;
     right: 0px;
-    margin-bottom: 0px;
+    margin-bottom: 32px;
     padding: 1em 0;
 }
 
@@ -59,11 +59,38 @@
     width: 115.5px;
     height: 12px;
     font-family: Roboto;
-    font-size: 12px;
+    font-size: 24px;
     font-weight: normal;
     font-style: normal;
     font-stretch: normal;
     line-height: 1.5;
     letter-spacing: normal;
     color: rgba(0, 0, 0, 0.38);
+}
+
+.container {
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 12px;
+}
+
+.mat-input-container {
+    width: 30%;
+}
+
+.github-btn {
+    width: 73px;
+    height: 32px;
+    border-radius: 3px;
+    border: solid 1px rgba(0, 0, 0, 0.87);
+    display: -webkit-flex;
+    display: flex;
+    align-items: stretch;
+    align-items: center;
+    justify-content: center;
+}
+
+form {
+    margin: 0;
+    padding: 0;
 }
