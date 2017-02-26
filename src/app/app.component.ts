@@ -79,6 +79,7 @@ export class AppComponent implements OnInit{
   }
 
   calBaseHsl(hexVal): any {
+    this.clearHexVal();
     this.tmpHsl = hexToHsl(this.dealHashStr(hexVal));
     this.baseHsl = `hsl(${this.tmpHsl[0]}, ${this.tmpHsl[1]}%, ${this.tmpHsl[2]}%)`;
     this.calHslArr2();
@@ -116,6 +117,12 @@ export class AppComponent implements OnInit{
 
       this.hslArr1.push(`hsl(${tmpHue}, ${tmpSaturation}%, ${tmpLightness}%)`);
     }
+  }
+
+  clearHexVal(): void {
+    this.hslArr2 = [];
+    this.hslArr1 = [];
+    this.hslArr3 = [];
   }
 
   calHslArr3(): void {
