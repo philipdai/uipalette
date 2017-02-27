@@ -27,6 +27,7 @@
                        #hv
                        setFocus
                        (click)="hv.value = ''"
+                       (click)="initHslaArrs()"
                        (keypress)="_keyPress($event)"
                        (input)="hv.value=dealHashStr($event.target.value.toUpperCase())"
                        formControlName="hexValue">

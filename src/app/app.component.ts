@@ -113,6 +113,7 @@ export class AppComponent implements OnInit{
   }
 
   initHslaArrs(): void {
+    this.clearHexVal();
     for (let i = 0; i < 9; i++) {
       this.hslArr1.push(`hsla(0, 0%, 85%, 0.${i * 10})`);
       this.hslArr2.push(`hsla(0, 0%, 55%, 0.${i * 10})`);
