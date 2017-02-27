@@ -97,7 +97,9 @@
              [style.width.px]="bodyWidth * 0.15"
              [style.height.px]="bodyWidth * 0.15"
              [style.background-color]="hsl">
-          <div class="btn-copy" *ngIf="row3ShowBtnCopy[i]">
+          <div class="btn-copy"
+               (click)="openSnackBar()"
+               *ngIf="row3ShowBtnCopy[i]">
             <div [style.margin]="'auto'">
               <i class="material-icons">content_copy</i>
             </div>

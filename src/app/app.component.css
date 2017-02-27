@@ -145,3 +145,7 @@ form {
     width: 100%;
 }
 
+.cdk-visually-hidden {
+    display: none;
+}
+

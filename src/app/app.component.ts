@@ -1,6 +1,7 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import {FormControl, FormBuilder, FormGroup, Validators, AbstractControl} from "@angular/forms";
+import { FormControl, FormBuilder, FormGroup, Validators, AbstractControl} from "@angular/forms";
 import { hexToHsl, rgbToHsl, hexToRgb } from '../common/color-conversion';
+import { MdSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-root',
@@ -22,7 +23,7 @@ export class AppComponent implements OnInit{
   row3ShowBtnCopy: Array<any>;
   bodyWidth: number;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, public snackBar: MdSnackBar) {
     this.hexToHsl = hexToHsl;
 
   }
@@ -164,5 +165,11 @@ export class AppComponent implements OnInit{
 
       this.hslArr3.push(`hsl(${tmpHue}, ${tmpSaturation}%, ${tmpLightness}%)`);
     }
+  }
+
+  openSnackBar() {
+    this.snackBar.open("The selected color copied!", null, {
+      duration: 2000
+    });
   }
 }
