@@ -6,9 +6,7 @@
           <div class="col col-md-4 col-lg-4">
             <div class="row">
               <div class="col">
-                <span class="uiplatte-icon" [style.color]="'#FF3F80'">UI</span><span class="uiplatte-icon"
-                                                                                     [style.color]="'rgba(0,0,0,.87)'">PALE</span><span
-                  class="uiplatte-icon" [style.color]="'#3E50B4'">TTE</span>
+                <span class="uiplatte-icon" [style.color]="'#FF3F80'">UI</span><span class="uiplatte-icon" [style.color]="'rgba(0,0,0,.87)'">PALE</span><span class="uiplatte-icon" [style.color]="'#3E50B4'">TTE</span>
               </div>
             </div>
             <div class="row">
@@ -31,7 +29,6 @@
                        (click)="hv.value = ''"
                        (keypress)="_keyPress($event)"
                        (input)="hv.value=dealHashStr($event.target.value.toUpperCase())"
-
                        formControlName="hexValue">
                 <i  *ngIf="hexValue.valid && hv.value.length > 0"
                     (click)="calBaseHsl(hv.value)"
@@ -58,7 +55,6 @@
              [style.width.px]="bodyWidth * 0.15"
              [style.height.px]="bodyWidth * 0.15"
              [style.background-color]="hsl">
-          HSL: {{ hsl }}
         </div>
       </div>
     </div>
@@ -70,7 +66,6 @@
              [style.width.px]="bodyWidth * 0.15"
              [style.height.px]="bodyWidth * 0.15"
              [style.background-color]="hsl">
-          HSL: {{ hsl }}
         </div>
       </div>
     </div>
@@ -82,7 +77,6 @@
              [style.width.px]="bodyWidth * 0.15"
              [style.height.px]="bodyWidth * 0.15"
              [style.background-color]="hsl">
-          HSL: {{ hsl }}
         </div>
       </div>
     </div>
