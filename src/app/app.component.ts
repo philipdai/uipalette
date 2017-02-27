@@ -55,6 +55,14 @@ export class AppComponent implements OnInit{
     const pattern = /#|[A-Fa-f0-9]/;
     let inputChar = String.fromCharCode(event.charCode);
 
+    if (event.code === "Enter" && this.hexForm.get('hexValue').value.length > 0) {
+      console.log(this.hexForm.get('hexValue').value);
+
+      this.clearHexVal();
+      this.calBaseHsl(this.hexForm.get('hexValue').value);
+      return ;
+    }
+
     if (!pattern.test(inputChar)) {
       // invalid character, prevent input
       event.preventDefault();

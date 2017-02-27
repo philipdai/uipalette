@@ -1,6 +1,6 @@
 <div>
   <div class="jumbotron jumbotron-fluid">
-    <form novalidate [formGroup]="hexForm">
+    <form novalidate [formGroup]="hexForm" autocomplete="off">
       <div class="container">
         <div class="row">
           <div class="col col-md-4 col-lg-4">
@@ -31,9 +31,10 @@
                        (click)="hv.value = ''"
                        (keypress)="_keyPress($event)"
                        (input)="hv.value=dealHashStr($event.target.value.toUpperCase())"
-                       (blur)="calBaseHsl(hv.value)"
+
                        formControlName="hexValue">
                 <i  *ngIf="hexValue.valid && hv.value.length > 0"
+                    (click)="calBaseHsl(hv.value)"
                     class="material-icons">keyboard_return</i>
 
                 <md-hint align="start"
