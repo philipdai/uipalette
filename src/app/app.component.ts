@@ -39,6 +39,7 @@ export class AppComponent implements OnInit{
     this.rgbArr2 = [];
     this.rgbArr3 = [];
     this.bodyWidth = window.innerWidth || document.body.clientWidth;
+    this.initHslaArrs();
   }
 
   buildForm(): void {
@@ -109,6 +110,14 @@ export class AppComponent implements OnInit{
 
     this.calHslArr1();
     this.calHslArr3();
+  }
+
+  initHslaArrs(): void {
+    for (let i = 0; i < 9; i++) {
+      this.hslArr1.push(`hsla(0, 0%, 85%, 0.${i * 10})`);
+      this.hslArr2.push(`hsla(0, 0%, 55%, 0.${i * 10})`);
+      this.hslArr3.push(`hsla(0, 0%, 25%, 0.${i * 10})`);
+    }
   }
 
   calHslArr1(): void {
