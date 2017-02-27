@@ -49,61 +49,63 @@
     </form>
   </div>
 
-  <div class="row">
-    <div class="col colorRow">
-      <div class="colorDiv"
-           *ngFor="let hsl of hslArr1"
-           [style.width.px]="bodyWidth * 0.115"
-           [style.height.px]="bodyWidth * 0.15"
-           [style.background-color]="hsl">
-        HSL: {{ hsl }}
+  <div class="container colorBody">
+    <div class="row">
+      <div class="col colorRow">
+        <div class="colorDiv"
+             *ngFor="let hsl of hslArr1"
+             [style.width.px]="bodyWidth * 0.15"
+             [style.height.px]="bodyWidth * 0.15"
+             [style.background-color]="hsl">
+          HSL: {{ hsl }}
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col colorRow">
-      <div class="colorDiv"
-           *ngFor="let hsl of hslArr2"
-           [style.width.px]="bodyWidth * 0.115"
-           [style.height.px]="bodyWidth * 0.15"
-           [style.background-color]="hsl">
-        HSL: {{ hsl }}
+    <div class="row">
+      <div class="col colorRow">
+        <div class="colorDiv"
+             *ngFor="let hsl of hslArr2"
+             [style.width.px]="bodyWidth * 0.15"
+             [style.height.px]="bodyWidth * 0.15"
+             [style.background-color]="hsl">
+          HSL: {{ hsl }}
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="row">
-    <div class="col colorRow">
-      <div class="colorDiv"
-           *ngFor="let hsl of hslArr3"
-           [style.width.px]="bodyWidth * 0.115"
-           [style.height.px]="bodyWidth * 0.15"
-           [style.background-color]="hsl">
-        HSL: {{ hsl }}
+    <div class="row">
+      <div class="col colorRow">
+        <div class="colorDiv"
+             *ngFor="let hsl of hslArr3"
+             [style.width.px]="bodyWidth * 0.15"
+             [style.height.px]="bodyWidth * 0.15"
+             [style.background-color]="hsl">
+          HSL: {{ hsl }}
+        </div>
       </div>
     </div>
-  </div>
-  <div class="footer">
-    <div class="container">
-      <div class="row">
-        <div class="col-9">
-          <div class="github-btn container">
-            <div class="row">
-              <div class="col-5" [style.paddingLeft.px]="2" [style.paddingRight.px]="2">
-                <img [src]="'../assets/git-hub-mark-32-px.png'" alt="Philip Dai's GitHub Repo Link">
-              </div>
-              <div class="col-7"
-                   [style.paddingLeft.px]="0"
-                   [style.paddingRight.px]="6"
-                   [style.paddingUp.px]="2"
-                   [style.fontSize.px]="13">Github
+    <div class="footer">
+      <div class="container" [style.width.%]="100">
+        <div class="row">
+          <div class="col-9">
+            <div class="github-btn container">
+              <div class="row">
+                <div class="col-5" [style.paddingLeft.px]="2" [style.paddingRight.px]="2">
+                  <img [src]="'../assets/git-hub-mark-32-px.png'" alt="Philip Dai's GitHub Repo Link">
+                </div>
+                <div class="col-7"
+                     [style.paddingLeft.px]="0"
+                     [style.paddingRight.px]="6"
+                     [style.paddingUp.px]="2"
+                     [style.fontSize.px]="13">Github
+                </div>
               </div>
             </div>
           </div>
-        </div>
-        <div class="col-3">
-          <span>Built by Qiang & Dai | &copy; 2017</span>
+          <div class="col-3" [style.width.px]="bodyWidth * 0.2">
+            <span>Built by Qiang & Dai | &copy; 2017</span>
+          </div>
         </div>
       </div>
     </div>
