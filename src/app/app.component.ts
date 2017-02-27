@@ -15,11 +15,11 @@ export class AppComponent implements OnInit{
   tmpHsl: any;
   baseHslArr2: Array<any>;
   hslArr1: Array<any>;
-  rgbArr1: Array<any>;
+  row1ShowBtnCopy: Array<any>;
   hslArr2: Array<any>;
-  rgbArr2: Array<any>;
+  row2ShowBtnCopy: Array<any>;
   hslArr3: Array<any>;
-  rgbArr3: Array<any>;
+  row3ShowBtnCopy: Array<any>;
   bodyWidth: number;
 
   constructor(private fb: FormBuilder) {
@@ -35,9 +35,9 @@ export class AppComponent implements OnInit{
     this.hslArr1 = [];
     this.hslArr2 = [];
     this.hslArr3 = [];
-    this.rgbArr1 = [];
-    this.rgbArr2 = [];
-    this.rgbArr3 = [];
+    this.row1ShowBtnCopy = [false, false, false, false, false, false, false, false, false];
+    this.row2ShowBtnCopy = [false, false, false, false, false, false, false, false, false];
+    this.row3ShowBtnCopy = [false, false, false, false, false, false, false, false, false];
     this.bodyWidth = window.innerWidth || document.body.clientWidth;
     this.initHslaArrs();
   }

@@ -52,10 +52,18 @@
     <div class="row">
       <div class="col colorRow">
         <div class="colorDiv"
-             *ngFor="let hsl of hslArr1"
+             *ngFor="let hsl of hslArr1; let i = index;"
+             (mouseleave)="row1ShowBtnCopy[i] = false"
+             (click)="row1ShowBtnCopy[i] = !row1ShowBtnCopy[i]"
+             [style.cursor]="'pointer'"
              [style.width.px]="bodyWidth * 0.15"
              [style.height.px]="bodyWidth * 0.15"
              [style.background-color]="hsl">
+          <div class="btn-copy" *ngIf="row1ShowBtnCopy[i]">
+            <div [style.margin]="'auto'">
+              <i class="material-icons">content_copy</i>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -63,10 +71,18 @@
     <div class="row">
       <div class="col colorRow">
         <div class="colorDiv"
-             *ngFor="let hsl of hslArr2"
+             *ngFor="let hsl of hslArr2; let i = index;"
+             (mouseleave)="row2ShowBtnCopy[i] = false"
+             (click)="row2ShowBtnCopy[i] = !row2ShowBtnCopy[i]"
+             [style.cursor]="'pointer'"
              [style.width.px]="bodyWidth * 0.15"
              [style.height.px]="bodyWidth * 0.15"
              [style.background-color]="hsl">
+          <div class="btn-copy" *ngIf="row2ShowBtnCopy[i]">
+            <div [style.margin]="'auto'">
+              <i class="material-icons">content_copy</i>
+            </div>
+          </div>
         </div>
       </div>
     </div>
@@ -74,10 +90,18 @@
     <div class="row">
       <div class="col colorRow">
         <div class="colorDiv"
-             *ngFor="let hsl of hslArr3"
+             *ngFor="let hsl of hslArr3; let i = index;"
+             (mouseleave)="row3ShowBtnCopy[i] = false"
+             (click)="row3ShowBtnCopy[i] = !row3ShowBtnCopy[i]"
+             [style.cursor]="'pointer'"
              [style.width.px]="bodyWidth * 0.15"
              [style.height.px]="bodyWidth * 0.15"
              [style.background-color]="hsl">
+          <div class="btn-copy" *ngIf="row3ShowBtnCopy[i]">
+            <div [style.margin]="'auto'">
+              <i class="material-icons">content_copy</i>
+            </div>
+          </div>
         </div>
       </div>
     </div>
