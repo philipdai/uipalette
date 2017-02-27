@@ -13,6 +13,8 @@
     border-left: 0;
     border-right: 0;
     background: transparent;
+    color: #ff498c;
+    width: 30%;
 }
 
 .hex-input:focus {
