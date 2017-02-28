@@ -28,6 +28,8 @@
                        setFocus
                        (click)="hv.value = ''"
                        (click)="initHslaArrs()"
+                       color-picker
+                       color-picker-model="hv.value"
                        (keypress)="_keyPress($event)"
                        (input)="hv.value=dealHashStr($event.target.value.toUpperCase())"
                        formControlName="hexValue">

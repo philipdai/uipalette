@@ -7,6 +7,7 @@ import { MaterialModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { SetFocusDirective } from '../directives/set-focus';
 import { MdSnackBarConfig } from '@angular/material';
+import {ColorPickerModule} from 'angular2-color-picker';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { MdSnackBarConfig } from '@angular/material';
     FormsModule,
     ReactiveFormsModule,
     HttpModule,
-    MaterialModule
+    MaterialModule,
+    ColorPickerModule
   ],
   providers: [
     MdSnackBarConfig

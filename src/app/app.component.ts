@@ -1,7 +1,7 @@
-import {Component, OnInit, HostListener} from '@angular/core';
-import {FormControl, FormBuilder, FormGroup, Validators, AbstractControl} from "@angular/forms";
-import {hexToHsl, rgbToHsl, hexToRgb} from '../common/color-conversion';
-import {MdSnackBar} from '@angular/material';
+import { Component, OnInit, HostListener } from '@angular/core';
+import { FormControl, FormBuilder, FormGroup, Validators, AbstractControl } from "@angular/forms";
+import { hexToHsl, rgbToHsl, hexToRgb } from '../common/color-conversion';
+import { ColorPickerService } from 'angular2-color-picker';
 
 @Component({
   selector: 'app-root',
@@ -23,7 +23,7 @@ export class AppComponent implements OnInit {
   row3ShowBtnCopy: Array<any>;
   bodyWidth: number;
 
-  constructor(private fb: FormBuilder, public snackBar: MdSnackBar) {
+  constructor(private fb: FormBuilder, private cpService: ColorPickerService) {
     this.hexToHsl = hexToHsl;
 
   }
@@ -179,4 +179,5 @@ export class AppComponent implements OnInit {
       x.className = x.className.replace("show", "");
     }, 2000);
   }
+
 }
