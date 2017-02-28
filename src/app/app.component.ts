@@ -1,5 +1,5 @@
 import { Component, OnInit, HostListener } from '@angular/core';
-import { FormControl, FormBuilder, FormGroup, Validators, AbstractControl } from "@angular/forms";
+import { FormBuilder, FormGroup, Validators, AbstractControl } from "@angular/forms";
 import { hexToHsl, rgbToHsl, hexToRgb } from '../common/color-conversion';
 import { ColorPickerService } from 'angular2-color-picker';
 
@@ -23,10 +23,11 @@ export class AppComponent implements OnInit {
   row3ShowBtnCopy: Array<any>;
   bodyWidth: number;
   toggleColorPicker: boolean;
+  selectedColor: string;
+  defaultColorFormat: string;
 
-  constructor(private fb: FormBuilder, private cpService: ColorPickerService) {
+  constructor(private fb: FormBuilder) {
     this.hexToHsl = hexToHsl;
-
   }
 
   ngOnInit(): void {
@@ -42,6 +43,7 @@ export class AppComponent implements OnInit {
     this.row3ShowBtnCopy = [false, false, false, false, false, false, false, false, false];
     this.bodyWidth = window.innerWidth || document.body.clientWidth;
     this.toggleColorPicker = false;
+    this.defaultColorFormat = 'HSL';
     this.initHslaArrs();
   }
 
@@ -169,13 +171,14 @@ export class AppComponent implements OnInit {
     }
   }
 
-  openSnackBar() {
+  openSnackBar(val) {
     // Get the snackbar DIV
     let x = document.getElementById("snackbar")
 
     // Add the "show" class to DIV
     x.className = "show";
 
+    this.selectedColor = val;
     // After 2 seconds, remove the show class from DIV
     setTimeout(function () {
       x.className = x.className.replace("show", "");

@@ -75,7 +75,7 @@
 .colorRow {
     display: -webkit-flex;
     display: flex;
-    align-items: stretch;
+    align-items: center;
 }
 
 .colorDiv {
