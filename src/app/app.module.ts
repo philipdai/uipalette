@@ -6,6 +6,7 @@ import { MaterialModule } from '@angular/material';
 
 import { AppComponent } from './app.component';
 import { SetFocusDirective } from '../directives/set-focus';
+import { MdSnackBarConfig } from '@angular/material';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,9 @@ import { SetFocusDirective } from '../directives/set-focus';
     HttpModule,
     MaterialModule
   ],
-  providers: [],
+  providers: [
+    MdSnackBarConfig
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,14 +1,14 @@
-import { Component, OnInit, HostListener } from '@angular/core';
-import { FormControl, FormBuilder, FormGroup, Validators, AbstractControl} from "@angular/forms";
-import { hexToHsl, rgbToHsl, hexToRgb } from '../common/color-conversion';
-import { MdSnackBar } from '@angular/material';
+import {Component, OnInit, HostListener} from '@angular/core';
+import {FormControl, FormBuilder, FormGroup, Validators, AbstractControl} from "@angular/forms";
+import {hexToHsl, rgbToHsl, hexToRgb} from '../common/color-conversion';
+import {MdSnackBar} from '@angular/material';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.css']
 })
-export class AppComponent implements OnInit{
+export class AppComponent implements OnInit {
   hexForm: FormGroup;
   hexValue: AbstractControl;
   hexToHsl: Function;
@@ -60,7 +60,7 @@ export class AppComponent implements OnInit{
     if (event.code === "Enter" && this.hexForm.get('hexValue').value.length > 0) {
       this.clearHexVal();
       this.calBaseHsl(this.hexForm.get('hexValue').value);
-      return ;
+      return;
     }
 
     if (!pattern.test(inputChar)) {
@@ -87,7 +87,7 @@ export class AppComponent implements OnInit{
   }
 
   calBaseHsl(hexVal): any {
-    if (hexVal.length === 0) return ;
+    if (hexVal.length === 0) return;
     this.clearHexVal();
     this.tmpHsl = hexToHsl(this.dealHashStr(hexVal));
     this.baseHsl = `hsl(${this.tmpHsl[0]}, ${this.tmpHsl[1]}%, ${this.tmpHsl[2]}%)`;
@@ -129,7 +129,7 @@ export class AppComponent implements OnInit{
       tmpHue = Math.ceil((this.baseHslArr2[i][0] + 3.6) % 360);
       tmpSaturation = this.baseHslArr2[i][1];
       if ((this.baseHslArr2[i][1] - 29) >= 0) {
-        tmpSaturation = (this.baseHslArr2[i][1] -29);
+        tmpSaturation = (this.baseHslArr2[i][1] - 29);
       }
       tmpLightness = this.baseHslArr2[i][2];
       if ((this.baseHslArr2[i][2] + 3) <= 100) {
@@ -159,7 +159,7 @@ export class AppComponent implements OnInit{
         tmpSaturation = (this.baseHslArr2[i][1] + 1);
       }
       tmpLightness = this.baseHslArr2[i][2];
-      if ((this.baseHslArr2[i][2] -13 ) >= 0) {
+      if ((this.baseHslArr2[i][2] - 13 ) >= 0) {
         tmpLightness = (this.baseHslArr2[i][2] - 13);
       }
 
@@ -168,8 +168,15 @@ export class AppComponent implements OnInit{
   }
 
   openSnackBar() {
-    this.snackBar.open("The selected color copied!", null, {
-      duration: 2000
-    });
+    // Get the snackbar DIV
+    let x = document.getElementById("snackbar")
+
+    // Add the "show" class to DIV
+    x.className = "show";
+
+    // After 2 seconds, remove the show class from DIV
+    setTimeout(function () {
+      x.className = x.className.replace("show", "");
+    }, 2000);
   }
 }
