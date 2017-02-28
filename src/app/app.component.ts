@@ -22,6 +22,7 @@ export class AppComponent implements OnInit {
   hslArr3: Array<any>;
   row3ShowBtnCopy: Array<any>;
   bodyWidth: number;
+  toggleColorPicker: boolean;
 
   constructor(private fb: FormBuilder, private cpService: ColorPickerService) {
     this.hexToHsl = hexToHsl;
@@ -40,6 +41,7 @@ export class AppComponent implements OnInit {
     this.row2ShowBtnCopy = [false, false, false, false, false, false, false, false, false];
     this.row3ShowBtnCopy = [false, false, false, false, false, false, false, false, false];
     this.bodyWidth = window.innerWidth || document.body.clientWidth;
+    this.toggleColorPicker = false;
     this.initHslaArrs();
   }
 

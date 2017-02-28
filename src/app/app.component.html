@@ -29,9 +29,11 @@
                        (click)="hv.value = ''"
                        (click)="initHslaArrs()"
                        [(colorPicker)]="hv.value"
-                       [style.background]="hv.value"
                        [value]="hv.value"
                        (keypress)="_keyPress($event)"
+                       [cpOKButton]="true"
+                       [cpPosition]="'bottom'"
+                       [cpOKButtonClass]= "'btn btn-primary btn-xs'"
                        (input)="hv.value=dealHashStr($event.target.value.toUpperCase())"
                        formControlName="hexValue">
                 <i  *ngIf="hexValue.valid && hv.value.length > 0"
