@@ -5,11 +5,12 @@
   "angular-cli": {},
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start": "node server.js",
     "lint": "tslint \"src/**/*.ts\"",
     "test": "ng test",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
-    "e2e": "protractor"
+    "e2e": "protractor",
+    "postinstall": "ng build --aot -prod"
   },
   "private": true,
   "dependencies": {
@@ -22,6 +23,7 @@
     "@angular/platform-browser": "^2.4.0",
     "@angular/platform-browser-dynamic": "^2.4.0",
     "@angular/router": "^3.3.1",
+    "@angular/cli": "^1.0.0-rc.0",
     "@ng-bootstrap/ng-bootstrap": "^1.0.0-alpha.16",
     "@types/lodash": "^4.14.50",
     "angular2-clipboard": "^2.0.14",
@@ -36,7 +38,6 @@
     "zone.js": "^0.7.4"
   },
   "devDependencies": {
-    "@angular/cli": "^1.0.0-rc.0",
     "@angular/compiler-cli": "^2.4.0",
     "@types/jasmine": "2.5.38",
     "@types/node": "^6.0.42",
