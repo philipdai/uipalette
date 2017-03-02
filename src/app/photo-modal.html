@@ -1,5 +1,6 @@
 <h1 md-dialog-title>Screenshot your palette </h1>
 <div [style.marginBottom]="'24px'"
+     [style.color]="'rgba(0, 0, 0, 0.54)'"
      [style.fontFamily]="Roboto" >
   Screenshot the following palette by any tool from your computer.
 </div>
@@ -44,7 +45,9 @@
   <div class="col-9"></div>
   <div class="col-3">
     <div md-dialog-actions>
-      <button md-button (click)="modalRef.close()">OK</button>
+      <button md-button
+              class="btn-ok"
+              (click)="modalRef.close()">OK</button>
     </div>
   </div>
 </div>

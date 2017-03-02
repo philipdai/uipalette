@@ -11,7 +11,7 @@
     "pree2e": "webdriver-manager update --standalone false --gecko false",
     "e2e": "protractor",
     "postinstall": "ng build --aot -prod",
-    "deploy": "git push origin master && git push https://git.heroku.com/whispering-bayou-80807.git master"
+    "deploy": "git push origin master && git push https://git.heroku.com/myuipalette.git master"
   },
   "private": true,
   "dependencies": {
