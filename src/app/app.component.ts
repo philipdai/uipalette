@@ -1,7 +1,6 @@
 import { Component, OnInit, HostListener, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from "@angular/forms";
 import { hexToHsl, rgbToHsl, hexToRgb } from '../common/color-conversion';
-import { ColorPickerService } from 'angular2-color-picker';
 import { MdDialog, MdDialogRef, MdDialogConfig} from "@angular/material";
 
 @Component({
@@ -188,8 +187,8 @@ export class AppComponent implements OnInit {
 
   openCopyModal() {
     let config = new MdDialogConfig();
-    config.width = `${this.bodyWidth * 0.62}px`;
-    config.height = `${this.bodyWidth * 0.43}px`;
+    config.width = `${this.bodyWidth * 0.6}px`;
+    config.height = `${this.bodyWidth * 0.4}px`;
     config.disableClose = true;
     let modalRef: MdDialogRef<PhotoModalComponent> = this.modal.open(PhotoModalComponent, config);
     modalRef.componentInstance.hslArr1 = this.hslArr1;
