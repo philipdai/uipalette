@@ -10,11 +10,13 @@
     "test": "ng test",
     "pree2e": "webdriver-manager update --standalone false --gecko false",
     "e2e": "protractor",
-    "postinstall": "ng build --aot -prod"
+    "postinstall": "ng build --aot -prod",
+    "deploy": "git push origin master && git push https://git.heroku.com/whispering-bayou-80807.git master"
   },
   "private": true,
   "dependencies": {
     "@angular/cli": "^1.0.0-rc.0",
+    "@angular/compiler-cli": "^2.4.7",
     "@angular/common": "^2.4.0",
     "@angular/compiler": "^2.4.0",
     "@angular/core": "^2.4.0",
