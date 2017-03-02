@@ -4,7 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MaterialModule } from '@angular/material';
 
-import { AppComponent } from './app.component';
+import { AppComponent, PhotoModalComponent } from './app.component';
 import { SetFocusDirective } from '../directives/set-focus';
 import { MdSnackBarConfig } from '@angular/material';
 import { ClipboardModule } from 'angular2-clipboard';
@@ -12,7 +12,11 @@ import { ClipboardModule } from 'angular2-clipboard';
 @NgModule({
   declarations: [
     AppComponent,
+    PhotoModalComponent,
     SetFocusDirective
+  ],
+  entryComponents: [
+    PhotoModalComponent
   ],
   imports: [
     BrowserModule,

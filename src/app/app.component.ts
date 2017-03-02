@@ -1,7 +1,8 @@
-import { Component, OnInit, HostListener } from '@angular/core';
+import { Component, OnInit, HostListener, Input } from '@angular/core';
 import { FormBuilder, FormGroup, Validators, AbstractControl } from "@angular/forms";
 import { hexToHsl, rgbToHsl, hexToRgb } from '../common/color-conversion';
 import { ColorPickerService } from 'angular2-color-picker';
+import { MdDialog, MdDialogRef, MdDialogConfig} from "@angular/material";
 
 @Component({
   selector: 'app-root',
@@ -26,7 +27,7 @@ export class AppComponent implements OnInit {
   selectedColor: string;
   defaultColorFormat: string;
 
-  constructor(private fb: FormBuilder) {
+  constructor(private fb: FormBuilder, public modal: MdDialog) {
     this.hexToHsl = hexToHsl;
   }
 
@@ -185,4 +186,30 @@ export class AppComponent implements OnInit {
     }, 2000);
   }
 
+  openCopyModal() {
+    let config = new MdDialogConfig();
+    config.width = `${this.bodyWidth * 0.62}px`;
+    config.height = `${this.bodyWidth * 0.43}px`;
+    config.disableClose = true;
+    let modalRef: MdDialogRef<PhotoModalComponent> = this.modal.open(PhotoModalComponent, config);
+    modalRef.componentInstance.hslArr1 = this.hslArr1;
+    modalRef.componentInstance.hslArr2 = this.hslArr2;
+    modalRef.componentInstance.hslArr3 = this.hslArr3;
+  }
+
+}
+
+@Component({
+  selector: 'photo-modal',
+  templateUrl: './photo-modal.html',
+  styleUrls: ['./app.component.css']
+})
+export class PhotoModalComponent {
+  @Input() hslArr1: Array<any>;
+  @Input() hslArr2: Array<any>;
+  @Input() hslArr3: Array<any>;
+
+  constructor(public modalRef: MdDialogRef<PhotoModalComponent>) {
+
+  }
 }

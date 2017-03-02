@@ -72,6 +72,34 @@
     top: -28px;
 }
 
+.btn-photo {
+    width: 56px;
+    height: 56px;
+    background-color: #ff498c;
+    box-shadow: 0 12px 12px 0 rgba(0, 0, 0, 0.24), 0 0 12px 0 rgba(0, 0, 0, 0.12);
+    border-style: none;
+    border-width: 0.5px;
+    border-image-source: linear-gradient(to bottom, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.06) 20%, rgba(255, 255, 255, 0));
+    border-image-slice: 1;
+    border-radius: 50%;
+
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+
+    justify-content: flex-end;
+    flex-direction: row;
+    align-items: center;
+
+    position: absolute;
+    left: 3px;
+    bottom: 3px;
+}
+
 .colorRow {
     display: -webkit-flex;
     display: flex;
@@ -194,4 +222,48 @@ form {
 @keyframes fadeout {
     from {bottom: 30px; opacity: 1;}
     to {bottom: 0; opacity: 0;}
+}
+
+#left-top-corner {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 3px;
+    border-top: solid 2px rgba(0, 0, 0, 0.38);
+    border-left: solid 2px rgba(0, 0, 0, 0.38);
+}
+
+#right-top-corner {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 2px;
+    border-top: solid 2px rgba(0, 0, 0, 0.38);
+    border-right: solid 2px rgba(0, 0, 0, 0.38);
+}
+
+#left-bottom-corner {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    border-radius: 2px;
+    border-left: solid 2px rgba(0, 0, 0, 0.38);
+    border-bottom: solid 2px rgba(0, 0, 0, 0.38);
+}
+
+#right-bottom-corner {
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 2px;
+    border-right: solid 2px rgba(0, 0, 0, 0.38);
+    border-bottom: solid 2px rgba(0, 0, 0, 0.38);
 }
