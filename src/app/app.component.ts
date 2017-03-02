@@ -187,8 +187,8 @@ export class AppComponent implements OnInit {
 
   openCopyModal() {
     let config = new MdDialogConfig();
-    config.width = `${this.bodyWidth * 0.6}px`;
-    config.height = `${this.bodyWidth * 0.4}px`;
+    config.width = `${this.bodyWidth * 0.5}px`;
+    config.height = `${this.bodyWidth * 0.32}px`;
     config.disableClose = true;
     let modalRef: MdDialogRef<PhotoModalComponent> = this.modal.open(PhotoModalComponent, config);
     modalRef.componentInstance.hslArr1 = this.hslArr1;
